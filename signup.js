@@ -18,13 +18,14 @@ signUpForm.addEventListener("submit", function(event){
     const username = userNameField.value;
     const password = passwordField.value;
 
-   signUp(fullName, username, password);
 
     if(validatePassword(passwordField)){
         successMessageDiv.style.display = "block";
         errorMessageDiv.style.display = "none";
+        signUp(fullName, username, password);
     } else{
         errorMessageDiv.style.display = "block";
         successMessageDiv.style.display = "none";
+        return;
     }
 })
