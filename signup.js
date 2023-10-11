@@ -1,4 +1,4 @@
-import { validatePassword  } from "./validate.js"
+import { validatePassword  } from "./vallidate.js"
 import { signUp  } from "./storage.js"
 
 
