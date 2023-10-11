@@ -7,6 +7,10 @@ const fullNameField = signUpForm.elements["fullName"];
 const userNameField = signUpForm.elements["userName"];
 const passwordField = signUpForm.elements["password"];
 
+
+const errorMessageDiv = document.getElementById("error-message");
+const successMessageDiv = document.getElementById("success-message");
+
 signUpForm.addEventListener("submit", function(event){
     event.preventDefault();
 
@@ -17,6 +21,10 @@ signUpForm.addEventListener("submit", function(event){
    signUp(fullName, username, password);
 
     if(validatePassword(passwordField)){
-        // alert("Your Password is Strong")
+        successMessageDiv.style.display = "block";
+        errorMessageDiv.style.display = "none";
+    } else{
+        errorMessageDiv.style.display = "block";
+        successMessageDiv.style.display = "none";
     }
 })
